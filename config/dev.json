@@ -1,0 +1,6 @@
+{
+    "connectionArn": "arn:aws:codeconnections:us-east-1:445085439286:connection/9f1c1ceb-0b58-46c6-b3e0-dd3ecd4999e9",
+    "repositoryAccount": "Oris-DevOps",
+    "repositoryName": "cdk-cicd",
+    "branchName": "main"
+}
