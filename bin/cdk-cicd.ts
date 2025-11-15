@@ -1,4 +1,4 @@
-import * as cdk from 'aws-cdk-lib/core';
+import * as cdk from 'aws-cdk-lib';
 import { CdkCicdStack } from '../lib/cdk-cicd-stack';
 import * as fs from 'fs';
 

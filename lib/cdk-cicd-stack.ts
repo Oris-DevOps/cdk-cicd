@@ -1,4 +1,4 @@
-import * as cdk from 'aws-cdk-lib/core';
+import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 import * as pipelines from 'aws-cdk-lib/pipelines';
@@ -33,7 +33,11 @@ export class CdkCicdStack extends cdk.Stack {
             connectionArn: `${props?.config.codestarConnectionArn}`,
           }
         ),
-        commands: ['npm ci', 'npm run build', 'npx cdk synth'],
+        commands: [
+          'npm ci', 
+          'npm run build', 
+           'node -r ts-node/register bin/cdk-cicd.ts',
+          'npx cdk synth'],
       }),
     });
 
