@@ -10,6 +10,19 @@ const envName = process.env.DEPLOY_ENV || 'dev';
 // Load config file dynamically
 const config = JSON.parse(fs.readFileSync(`./config/${envName}.json`, 'utf8'));
 
+console.log("CONFIG PATH:", `./config/${envName}.json`);
+
+try {
+  console.log("CONFIG CONTENT:", fs.readFileSync(`./config/${envName}.json`, 'utf8'));
+} catch (err) {
+  console.error("CONFIG READ ERROR:", err);
+}
+
+console.log("WORKING DIRECTORY:", process.cwd());
+console.log("FILES:", fs.readdirSync('.'));
+console.log("CONFIG EXISTS?", fs.existsSync('./config/dev.json'));
+
+
 new CdkCicdStack(app, 'CdkCicdStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
